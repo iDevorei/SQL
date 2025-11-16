@@ -4,9 +4,11 @@
 
 Решение:
 
-`SELECT model, speed, hd
+```
+SELECT model, speed, hd
 FROM pc
-WHERE price<500`
+WHERE price<500
+```
 
 -----------------------------------------
 
