@@ -18,9 +18,11 @@ WHERE price<500
 
 Решение:
 
-`SELECT DISTINCT maker
+```
+SELECT DISTINCT maker
 FROM product
-WHERE type='printer'`
+WHERE type='printer'
+```
 
 --------------------------------------------
 
@@ -30,9 +32,11 @@ WHERE type='printer'`
 
 Решение:
 
-`SELECT model, ram, screen
+```
+SELECT model, ram, screen
 FROM laptop
-WHERE price>1000`
+WHERE price>1000
+```
 
 ------------------------------
 
@@ -42,9 +46,11 @@ WHERE price>1000`
 
 Решение:
 
-`SELECT *
+```
+SELECT *
 FROM printer
-WHERE color='y'`
+WHERE color='y'
+```
 
 -------------------------------------
 
@@ -54,9 +60,11 @@ WHERE color='y'`
 
 Решение:
 
-`SELECT model, speed, hd
+```
+SELECT model, speed, hd
 FROM pc
 WHERE cd IN ('12x', '24x')
-AND price < 600`
+AND price < 600
+```
 
 --------------------------------------------------
