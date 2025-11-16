@@ -4,10 +4,12 @@
 
 Решение:
 
-`SELECT DISTINCT p.maker, speed
+```
+SELECT DISTINCT p.maker, speed
 FROM product AS p
 JOIN laptop AS lp ON p.model = lp.model
-WHERE hd >= 10`
+WHERE hd >= 10
+```
 
 -------------------------------------
 
@@ -17,7 +19,8 @@ WHERE hd >= 10`
 
 Решение:
 
-`SELECT p.model, price
+```
+SELECT p.model, price
 FROM product AS p JOIN pc AS Pc ON p.model = Pc.model
 WHERE maker = 'B'
 UNION
@@ -27,7 +30,8 @@ WHERE maker = 'B'
 UNION
 SELECT p.model, price
 FROM product AS p JOIN printer AS pr ON p.model = pr.model
-WHERE maker = 'B'`
+WHERE maker = 'B'
+```
 
 -------------------------------------
 
@@ -37,13 +41,15 @@ WHERE maker = 'B'`
 
 Решение:
 
-`SELECT maker
+```
+SELECT maker
 FROM product
 WHERE type IN ('pc')
 EXCEPT
 SELECT maker
 FROM product
-WHERE type IN('laptop')`
+WHERE type IN('laptop')
+```
 
 ----------------------------------------
 
@@ -53,9 +59,11 @@ WHERE type IN('laptop')`
 
 Решение:
 
-`SELECT DISTINCT maker
+```
+SELECT DISTINCT maker
 FROM product AS p JOIN pc ON p.model = pc.model
-WHERE speed >= 450`
+WHERE speed >= 450
+```
 
 ----------------------------------------
 
@@ -65,9 +73,11 @@ WHERE speed >= 450`
 
 Решение:
 
-`SELECT model, price
+```
+SELECT model, price
 FROM printer
-WHERE price >= (SELECT MAX(price) FROM printer)`
+WHERE price >= (SELECT MAX(price) FROM printer)
+```
 
 ----------------------------------------
 
@@ -77,8 +87,9 @@ WHERE price >= (SELECT MAX(price) FROM printer)`
 
 Решение:
 
-`SELECT AVG(speed)
-FROM pc`
+```SELECT AVG(speed)
+FROM pc
+```
 
 ----------------------------------------
 
@@ -88,9 +99,11 @@ FROM pc`
 
 Решение:
 
-`SELECT AVG(speed)
+```
+SELECT AVG(speed)
 FROM laptop
-WHERE price > 1000`
+WHERE price > 1000
+```
 
 ----------------------------------------
 
@@ -100,9 +113,11 @@ WHERE price > 1000`
 
 Решение:
 
-`SELECT AVG(speed)
+```
+SELECT AVG(speed)
 FROM pc JOIN product AS p ON pc.model = p.model
-WHERE maker IN ('A')`
+WHERE maker IN ('A')
+```
 
 ----------------------------------------
 
@@ -112,9 +127,11 @@ WHERE maker IN ('A')`
 
 Решение:
 
-`SELECT sh.class, name, country
+```
+SELECT sh.class, name, country
 FROM Classes AS cl JOIN Ships AS sh ON cl.class = sh.class
-WHERE numGuns >= 10`
+WHERE numGuns >= 10
+```
 
 ----------------------------------------
 
@@ -124,9 +141,11 @@ WHERE numGuns >= 10`
 
 Решение:
 
-`SELECT hd
+```
+SELECT hd
 FROM pc
 GROUP BY hd
-HAVING COUNT(hd) > 1`
+HAVING COUNT(hd) > 1
+```
 
 ----------------------------------------
