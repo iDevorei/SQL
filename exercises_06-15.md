@@ -4,6 +4,9 @@
 
 Решение:
 
-`No solution`
+`SELECT DISTINCT p.maker, speed
+FROM product AS p
+JOIN laptop AS lp ON p.model = lp.model
+WHERE hd >= 10`
 
 -------------------------------------
