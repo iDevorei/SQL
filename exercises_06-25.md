@@ -205,12 +205,15 @@ WHERE color = 'y')
 
 Задание: 19.
 
-Здесь будет условие.
+Для каждого производителя, имеющего модели в таблице Laptop, найдите средний размер экрана выпускаемых им ПК-блокнотов.
+Вывести: maker, средний размер экрана.
 
 Решение:
 
 ```
-no
+SELECT p.maker, AVG(lp.screen) AS avg_screen
+FROM product p JOIN laptop lp ON p.model = lp.model
+GROUP BY p.maker
 ```
 
 ----------------------------------------
