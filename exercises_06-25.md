@@ -171,24 +171,34 @@ AND A.model > B.model
 
 Задание: 17.
 
-Здесь будет условие.
+Найдите модели ПК-блокнотов, скорость которых меньше скорости каждого из ПК.
+Вывести: type, model, speed
 
 Решение:
 
 ```
-no
+SELECT DISTINCT 'laptop' AS type, lp.model, lp.speed
+FROM laptop AS lp
+WHERE lp.speed < (SELECT MIN(speed) FROM pc)
 ```
 
 ----------------------------------------
 
 Задание: 18.
 
-Здесь будет условие.
+Найдите производителей самых дешевых цветных принтеров. Вывести: maker, price
 
 Решение:
 
 ```
-no
+SELECT DISTINCT p.maker, pr.price
+FROM printer AS pr 
+JOIN product AS p ON pr.model = p.model
+WHERE pr.color = 'y'
+AND pr.price = (
+SELECT MIN(price)
+FROM printer
+WHERE color = 'y')
 ```
 
 ----------------------------------------
