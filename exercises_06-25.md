@@ -87,7 +87,8 @@ WHERE price >= (SELECT MAX(price) FROM printer)
 
 Решение:
 
-```SELECT AVG(speed)
+```
+SELECT AVG(speed)
 FROM pc
 ```
 
