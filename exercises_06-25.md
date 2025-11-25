@@ -266,31 +266,63 @@ GROUP BY pc.speed
 
 Задание: 23.
 
-Здесь будет условие.
+Найдите производителей, которые производили бы как ПК
+со скоростью не менее 750 МГц, так и ПК-блокноты со скоростью не менее 750 МГц.
+Вывести: Maker.
 
 Решение:
 
 ```
-no
+SELECT p.maker
+FROM product p JOIN pc ON p.model = pc.model
+WHERE speed >= 750
+INTERSECT
+SELECT p.maker
+FROM product p JOIN laptop lp ON p.model = lp.model
+WHERE lp.speed >= 750
 ```
 
 ----------------------------------------
 
 Задание: 24.
 
-Здесь будет условие.
+Перечислите номера моделей любых типов, имеющих самую высокую цену по всей имеющейся в базе данных продукции.
 
 Решение:
 
 ```
-no
+SELECT model
+FROM (
+SELECT model, price
+FROM pc
+UNION
+SELECT model, price
+FROM laptop
+UNION
+SELECT model, price
+FROM printer
+) AS max_model
+WHERE price = (
+SELECT MAX(price)
+FROM (
+SELECT price
+FROM pc
+UNION
+SELECT price
+FROM laptop
+UNION
+SELECT price
+FROM printer
+) AS max_price
+)
+
 ```
 
 ----------------------------------------
 
 Задание: 25.
 
-Здесь будет условие.
+Найдите производителей принтеров, которые производят ПК с наименьшим объемом RAM и с самым быстрым процессором среди всех ПК, имеющих наименьший объем RAM. Вывести: Maker
 
 Решение:
 
