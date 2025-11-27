@@ -366,12 +366,15 @@ WHERE maker = 'A'
 
 Задание: 11.
 
-Условие.
+Найдите средний размер диска ПК каждого из тех производителей, которые выпускают и принтеры. Вывести: maker, средний размер HD.
 
 Решение:
 
 ```
-no
+SELECT p.maker, AVG(pc.hd) AS avg_hd
+FROM product p JOIN pc ON p.model = pc.model
+WHERE p.maker IN (SELECT maker FROM product WHERE type = 'printer')
+GROUP BY p.maker
 ```
 
 ----------------------------------------
