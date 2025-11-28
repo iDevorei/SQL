@@ -364,7 +364,7 @@ WHERE maker = 'A'
 
 ----------------------------------------
 
-Задание: 11.
+Задание: 27.
 
 Найдите средний размер диска ПК каждого из тех производителей, которые выпускают и принтеры. Вывести: maker, средний размер HD.
 
@@ -379,14 +379,26 @@ GROUP BY p.maker
 
 ----------------------------------------
 
-Задание: 11.
+Задание: 28.
 
-Условие.
+Используя таблицу Product, определить количество производителей, выпускающих по одной модели.
 
 Решение:
 
 ```
-no
+SELECT COUNT(maker) AS qwert
+FROM product
+WHERE maker IN (SELECT maker FROM product GROUP BY maker HAVING COUNT(model) = 1)
+```
+
+Альтернатива (тупо лучше):
+
+```
+SELECT COUNT(One.maker) AS qwert
+FROM (SELECT maker 
+FROM product 
+GROUP BY maker 
+HAVING COUNT(model) = 1) AS One
 ```
 
 ----------------------------------------
