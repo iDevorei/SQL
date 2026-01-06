@@ -4,7 +4,7 @@
 
 1. [exercises_01-05](https://github.com/iDevorei/SQL/blob/main/exercises_01-05.md)
 
-1. [exercises_06-25](https://github.com/iDevorei/SQL/blob/main/exercises_06-25.md)
+1. [exercises_06-25](https://github.com/iDevorei/SQL/blob/main/exercises_06-28.md)
 
 ## Specification
 
